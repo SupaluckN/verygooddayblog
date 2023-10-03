@@ -4,39 +4,24 @@ import { SITE_TITLE } from '../consts';
 
 ---
 
-<header class="sticky top-0 z-10 bg-blue-300 bg-opacity-75">
-	<section class="mx-auto flex max-w-4xl items-center justify-between p-4 bg-slate-300">
-		<h1 class="text-3xl font-medium">
-		  <a href="#hero">🚀 VeryGoodDay55999</a>
-		</h1>
-		<div>
-		  <button id="hamburger-button" class="relative h-8 w-8 cursor-pointer text-3xl md:hidden">
-			<!-- &#9776; -->
-			<div
-			  class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']">
-			</div>
-		  </button>
-		  <nav class="hidden space-x-8 text-xl md:block" aria-label="main">
+
+<nav class="sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30">
+	<div class="max-w-5xl mx-auto px-4">
+		<div class="flex items-center justify-between h-16">
+		<span class="text-2xl text-gray-900 font-semibold">Logo</span>
+		<div class="flex space-x-4 text-gray-900">
+			<HeaderLink href="/blog" class="hover:opacity-90" aria-current="page">Home</HeaderLink>
+			<HeaderLink href="/about" class="hover:opacity-90" aria-current="page">About</HeaderLink>
+			<HeaderLink href="/" class="hover:opacity-90" aria-current="page">Blog</HeaderLink>
 			
-			<ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-				<li>
-				  <HeaderLink href="/blog" class="hover:opacity-90" aria-current="page">Home</HeaderLink>
-				</li>
-				<li>
-				  <HeaderLink href="/about" class="hover:opacity-90" aria-current="page">About</HeaderLink>
-				</li>
-				<li>
-				  <HeaderLink href="/" class="hover:opacity-90" aria-current="page">Blog</HeaderLink>
-				</li>
-			  </ul>
-		  </nav>
 		</div>
-	  </section>
-	  
-	
-</header>
+		</div>
+	</div>
+</nav>
+		
+
 <style>
-	header {
+	/* header {
 		margin: 0;
 		padding: 0 1em;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
@@ -68,10 +53,10 @@ import { SITE_TITLE } from '../consts';
 	.social-links,
 	.social-links a {
 		display: flex;
-	}
-	@media (max-width: 720px) {
+	} */
+	/* @media (max-width: 720px) {
 		.social-links {
 			display: none;
 		}
-	}
+	} */
 </style>
