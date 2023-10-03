@@ -4,24 +4,23 @@ import { SITE_TITLE } from '../consts';
 
 ---
 
-
-<nav class="sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30">
-	<div class="max-w-5xl mx-auto px-4">
-		<div class="flex items-center justify-between h-16">
-		<span class="text-2xl text-gray-900 font-semibold">Logo</span>
-		<div class="flex space-x-4 text-gray-900">
-			<HeaderLink href="/blog" class="hover:opacity-90" aria-current="page">Home</HeaderLink>
-			<HeaderLink href="/about" class="hover:opacity-90" aria-current="page">About</HeaderLink>
-			<HeaderLink href="/" class="hover:opacity-90" aria-current="page">Blog</HeaderLink>
-			
+<header class="sticky top-0 z-10 bg-sky-500 backdrop-filter backdrop-blur-lg bg-opacity-30">
+	<nav>
+		<div class="max-w-5xl mx-auto px-4">
+			<div class="flex items-center justify-between h-16">
+			<span class="text-2xl text-gray-900 font-semibold">Logo</span>
+			<div class="flex space-x-4 text-gray-900">
+				<HeaderLink href="/blog" class="hover:opacity-90" aria-current="page">Home</HeaderLink>
+				<HeaderLink href="/about" class="hover:opacity-90" aria-current="page">About</HeaderLink>
+				<!-- <HeaderLink href="/" class="hover:opacity-90" aria-current="page">Blog</HeaderLink> -->
+			</div>
+			</div>
 		</div>
-		</div>
-	</div>
-</nav>
-		
+	</nav>
+</header>
 
 <style>
-	/* header {
+	 header {
 		margin: 0;
 		padding: 0 1em;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
@@ -36,9 +35,9 @@ import { SITE_TITLE } from '../consts';
 		text-decoration: none;
 	}
 	nav {
-		display: flex;
+		/* display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: space-between; */
 	}
 	nav a {
 		padding: 1em 0.5em;
@@ -53,7 +52,7 @@ import { SITE_TITLE } from '../consts';
 	.social-links,
 	.social-links a {
 		display: flex;
-	} */
+	} 
 	/* @media (max-width: 720px) {
 		.social-links {
 			display: none;
