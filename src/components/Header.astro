@@ -2,6 +2,8 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 
+import { Icon } from 'astro-icon'
+
 ---
 
 <header class="sticky top-0 z-10 bg-blue-500 backdrop-filter backdrop-blur-lg bg-opacity-50">
@@ -10,7 +12,7 @@ import { SITE_TITLE } from '../consts';
 			<div class="flex items-center justify-between h-16">
 			<span class="text-2xl text-gray-900 font-semibold">Logo</span>
 			<div class="flex space-x-4 text-gray-900">
-				<HeaderLink href="/blog" class="" aria-current="page">Home</HeaderLink>
+				<HeaderLink href="/blog" class="" aria-current="page"> Home</HeaderLink>
 				<HeaderLink href="/about" class="" aria-current="page">About</HeaderLink>
 				<!-- <HeaderLink href="/" class="hover:opacity-90" aria-current="page">Blog</HeaderLink> -->
 			</div>
@@ -50,7 +52,10 @@ import { SITE_TITLE } from '../consts';
 		/* border-bottom-color: var(--accent); */
 	}
 
-	
+	[astro-icon] {
+        display: flex;
+    }
+
 	.social-links,
 	.social-links a {
 		display: flex;

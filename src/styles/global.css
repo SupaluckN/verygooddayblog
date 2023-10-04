@@ -35,7 +35,8 @@ body {
 	padding: 0;
 	text-align: left;
 	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='4000' height='3600' preserveAspectRatio='none' viewBox='0 0 4000 3600'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1067%26quot%3b)' fill='none'%3e%3crect width='4000' height='3600' x='0' y='0' fill='rgba(136%2c 201%2c 229%2c 0.17)'%3e%3c/rect%3e%3cpath d='M0%2c1046.805C205.862%2c1009.422%2c409.463%2c1014.484%2c606.195%2c943.258C850.084%2c854.959%2c1163.165%2c816.197%2c1278.573%2c583.905C1393.626%2c352.329%2c1211.886%2c86.376%2c1157.513%2c-166.425C1107.382%2c-399.503%2c1143.78%2c-676.949%2c971.862%2c-842.123C800.974%2c-1006.307%2c526.101%2c-955.581%2c292.807%2c-997.208C87.818%2c-1033.785%2c-107.536%2c-1092.94%2c-314.675%2c-1071.683C-556.306%2c-1046.886%2c-807.567%2c-1015.568%2c-997.968%2c-864.744C-1206.075%2c-699.894%2c-1377.473%2c-466.24%2c-1411.393%2c-202.928C-1445.164%2c59.223%2c-1289.61%2c298.373%2c-1178.709%2c538.299C-1068.319%2c777.119%2c-1007.956%2c1088.29%2c-766.379%2c1192.509C-522.679%2c1297.644%2c-261.14%2c1094.227%2c0%2c1046.805' fill='rgba(121%2c 194%2c 226%2c 0.17)'%3e%3c/path%3e%3cpath d='M4000 5129.3099999999995C4291.976 5130.111 4574.493 5033.985 4819.877 4875.754 5065.009 4717.686 5244.178 4487.589 5388.372 4234.048 5543.829 3960.704 5666.789 3672.051 5683.048 3358.014 5701.789 2996.042 5714.233 2593.8289999999997 5487.951 2310.683 5260.097 2025.57 4868.825 1898.549 4504.185 1882.905 4174.267 1868.751 3915.498 2140.181 3597.609 2229.5820000000003 3274.382 2320.4849999999997 2843.91 2154.002 2627.475 2410.701 2410.431 2668.123 2614.674 3063.545 2610.5789999999997 3400.2309999999998 2607.117 3684.889 2502.026 3971.6549999999997 2605.264 4236.955 2711.123 4508.991 2937.1220000000003 4713.943 3183.009 4871.262 3428.549 5028.359 3708.506 5128.51 4000 5129.3099999999995' fill='rgba(151%2c 208%2c 232%2c 0.17)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1067'%3e%3crect width='4000' height='3600' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+	background-size: 100% 100%;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
@@ -102,7 +103,7 @@ table {
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
+	/* border-radius: 8px; */
 }
 code {
 	padding: 2px 5px;
@@ -152,3 +153,5 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+
