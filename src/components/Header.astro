@@ -2,6 +2,11 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 
+import { Image } from "astro:assets";
+import myImage from "../assets/logo/VeryGoodDay5599.png";
+
+
+
 import { Icon } from 'astro-icon'
 
 ---
@@ -10,7 +15,10 @@ import { Icon } from 'astro-icon'
 	<nav>
 		<div class="max-w-5xl mx-auto px-4">
 			<div class="flex items-center justify-between h-16">
-			<span class="text-2xl text-gray-900 font-semibold">Logo</span>
+				<Image src={myImage} width={60} height={60} alt="..." />
+				<!-- <Image src="https://example.com/logo.png" width={300} height={300} alt="..." /> -->
+
+			<!-- <span class="text-2xl text-gray-900 font-semibold">Logo</span> -->
 			<div class="flex space-x-4 text-gray-900">
 				<HeaderLink href="/blog" class="" aria-current="page"> Home</HeaderLink>
 				<HeaderLink href="/about" class="" aria-current="page">About</HeaderLink>
