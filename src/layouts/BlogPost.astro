@@ -5,6 +5,13 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
+// Import the <Image /> component
+import { getImage } from "astro:assets"
+// Import a reference to the image itself
+import myImage from "../assets/blog-placeholder-2.jpg"
+//import headerBlog from "../asset/blog-placeholder-2.jpg";
+const optimizedBackgroundImage = await getImage({ src: myImage })
+
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
@@ -13,73 +20,43 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en" class="sm:scroll-smooth">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				/* color: rgb(var(--gray)); */
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
 	</head>
 
 	<body class="">
 		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+			
+		<div class="app min-h-screen font-sans overflow-hidden mt-0 top-0">
+
+			<div 
+			style={`height:280px; background-image: url('${optimizedBackgroundImage.src}')`}
+			class="h-36 flex items-center justify-center bg-cover bg-no-repeat"
+			></div>
+
+			<div class="wrapper border-b-2 -mt-32 bg-white overflow-hidden mx-auto max-w-5xl rounded shadow-lg columns-7xl">
+				<main>
+					<article>	
+						<div class="prose">
+							<div class="title">
+								<div class="date">
+									<FormattedDate date={pubDate} />
+									{
+										updatedDate && (
+											<div class="last-updated-on">
+												Last updated on <FormattedDate date={updatedDate} />
+											</div>
+										)
+									}
+								</div>
+								<h1 class="">{title}</h1>
+								<hr />
+							</div>
+							<slot />
 						</div>
-						<h1 class="">{title}</h1>
-						<hr />
-					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
+					</article>
+				</main>
+			</div>
+		</div>
+
 		<Footer />
 	</body>
 </html>
