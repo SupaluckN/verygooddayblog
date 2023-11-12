@@ -5,6 +5,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
+import { Icon } from 'astro-icon'
+
 // Import the <Image /> component
 import { getImage } from "astro:assets"
 // Import a reference to the image itself
@@ -25,7 +27,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<body class="">
 		<Header />
 			
-		<div class="app min-h-screen font-sans overflow-hidden mt-0 top-0">
+		<div class="app min-h-screen font-sans overflow-hidden mt-0 top-0 mb-16">
 
 			<div 
 			style={`height:280px; background-image: url('${optimizedBackgroundImage.src}')`}
@@ -36,19 +38,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				<main>
 					<article>	
 						<div class="prose">
-							<div class="title">
-								<div class="date">
+							<div class="title mb-16 pb-8 border-b-2">
+
+								<h1 class="text-5xl mb-5">{title}</h1>
+
+								
+								<small class="date flex">
+									<Icon name="jam:write" class="h-5 w-5 flex-no-shrink fill-current pt-1 mr-1" />
 									<FormattedDate date={pubDate} />
 									{
 										updatedDate && (
-											<div class="last-updated-on">
+											<span class="last-updated-on text-sm leading-3">
 												Last updated on <FormattedDate date={updatedDate} />
-											</div>
+											</span>
 										)
 									}
-								</div>
-								<h1 class="">{title}</h1>
-								<hr />
+								</small>
+								
 							</div>
 							<slot />
 						</div>
