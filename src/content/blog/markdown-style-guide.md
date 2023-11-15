@@ -1,11 +1,11 @@
 ---
-title: 'Markdown Style Guide'
+title: 'วิธีการ'
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jul 01 2022'
+pubDate: 'november 02 2023'
 heroImage: '/blog-placeholder-1.jpg'
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+บทความนี้เหมาะสำหรับผู้ที่ซื้อสินค้าผ่าน Shopee แล้วต้องการหาวิธีการ
 
 ## Headings
 

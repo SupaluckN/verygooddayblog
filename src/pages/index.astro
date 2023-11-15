@@ -4,14 +4,20 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
+
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
+import { Icon } from 'astro-icon';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
+
+const lastText = "ใหม่";
+const headLatest = "Lastest";
+const introText = "Blog ที่ให้ความรู้ การแก้ปัญหาต่าง ๆ ไม่ว่าจะทางด้านไอที การใช้งาน หรือวิธีการต่าง ๆ";
 
 ---
 
@@ -19,116 +25,115 @@ const posts = (await getCollection('blog')).sort(
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				/* margin: 0; */
-				color: rgb(var(--black));
-				line-height: 0.75;
-			}
-			.date {
-				/* margin: 0; */
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4
-			{
-				color: rgb(var(--accent));
-			}
-			ul li a:hover .date {
-				/* color: rgb(var(--accent)); */
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-					margin-bottom: 2em;
-				}
-				ul li:first-child {
-					margin-bottom: 2em;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
+		
 	</head>
 	<body>
 		<Header />
-		<main>
-			<div>
-				<h2 class="text-3xl 
+
+		<div class="container mx-auto px-12 my-16">
+
+			<section class="mt-16 mb-8 grid sm:grid-cols-1 md:grid-cols-2 gap-x-3">
+				<div class="">
+					<h1 class="text-3xl 
 				text-5xl p-4 text-left
 				font-bold from-indigo-500 via-red-500 to-indigo-500 
 				bg-gradient-to-r 
-				bg-clip-text text-transparent">Lastest</h2>
-			</div>
-			<section>
-				<ul>
+				bg-clip-text text-transparent">VeryGoodDay5599</h1>
+				
+					<p class="px-4 py-6">{introText}</p>
+				</div>
+				
+				<div class="bg-white">
 					{
-						posts.map((post) => (
-							<li>
-								<div class="rounded-lg shadow-lg border-slate-300">
+						posts.slice(0,1).map((post) => (
+							<div class="rounded overflow-hidden shadow-lg">
+								
 								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" class="hover:filter hover:brightness-150 " />
+									<div class="relative">
+										<img width={720} height={360} src={post.data.heroImage} class="w-full" />
 									
-									<div class="px-6 py-2 mt-0 rounded-lg md:bg-transparent bg-slate-50">
-										<h3 class="title pt-3">{post.data.title}</h3>
-										<span class="date text-xs">
-										<FormattedDate date={post.data.pubDate} />
-									 </span>
+										<div class="hover:bg-transparent transition duration-300 
+										absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
+
+										<a href={`/blog/${post.slug}/`}>
+											<div class="absolute bottom-0 left-0 py-4 px-4 w-full
+											backdrop-blur-xl bg-white/40">
+											 <h2 class="font-bold text-xl">{post.data.title}</h2>
+											
+											</div>
+										</a>
+
+										<div class="text-sm absolute top-0 right-0 bg-red-500 px-2
+										 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-2 mr-2">
+											<span class="font-bold">{lastText}</span>
+											
+										</div>
 									</div>
-									
 								</a>
+
+							
+						))
+					}
+				</div>
+			</section>
+		
+			<div>
+				<h2 class="text-3xl 
+				text-5xl p-4 text-left
+				font-bold from-blue-500 via-red-500 to-blue-500 
+				bg-gradient-to-r 
+				bg-clip-text text-transparent">{headLatest}</h2>
+			</div>
+
+			<div class="max-w-screen-xl mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-8">
+					{
+						posts.slice(1,10).map((post) => (
+							<div class="rounded overflow-hidden shadow-lg">
+								
+								<a href={`/blog/${post.slug}/`}>
+									<div class="relative">
+										<img width={720} height={360} src={post.data.heroImage} class="w-full" />
+									
+										<div class="hover:bg-transparent transition duration-300 
+										absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
+
+										
+										<div class="absolute top-0 right-0 rounded-bl backdrop-blur-xl bg-white/60 
+										backdrop-opacity-5 px-2 py-1 text-sm">
+											<div class="flex flex-row items-center">
+												<span  class="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
+													<Icon name="ic:baseline-access-time" class="h-5 w-5 flex-no-shrink fill-current mr-1" />
+													<span class="ml-1"><FormattedDate date={post.data.pubDate} />
+														</span>
+												</span>
+												
+											</div>
+										</div>
+										
+									</div>
+								</a>
+								
+								<div class="px-6 py-4">
+									<a href={`/blog/${post.slug}/`} class="font-semibold text-lg inline-block">
+										<h2>{post.data.title}</h2>
+										</a>
+									<p class="text-gray-500 text-sm pt-2">
+										{post.data.description}
+									</p>
+								</div>
+								
 								
 								</div>
 
-							</li>
+
+							
 						))
 					}
-				</ul>
-			</section>
-		</main>
+				</div>
+			</div>
+			
+		</div><!-- container mx-auto -->
 		<Footer />
 	</body>
 </html>

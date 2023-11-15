@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 
 // Import the <Image /> component
 import { getImage } from "astro:assets"
@@ -27,20 +27,27 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<body class="">
 		<Header />
 			
-		<div class="app min-h-screen font-sans overflow-hidden mt-0 top-0 mb-16">
+		<div class="app min-h-screen font-sans overflow-hidden mb-16">
 
 			<div 
-			style={`height:280px; background-image: url('${optimizedBackgroundImage.src}')`}
-			class="h-36 flex items-center justify-center bg-cover bg-no-repeat"
+			style={`height:300px; background-image: url('${optimizedBackgroundImage.src}')`}
+			class="h-32 flex items-center justify-center bg-cover bg-no-repeat"
 			></div>
 
-			<div class="wrapper border-b-2 -mt-32 bg-white overflow-hidden mx-auto max-w-5xl rounded shadow-lg columns-7xl">
+			<div class="wrapper border-b-2 -mt-48
+			 bg-white overflow-hidden mx-auto max-w-5xl 
+			 rounded shadow-2xl columns-7xl">
 				<main>
 					<article>	
 						<div class="prose">
-							<div class="title mb-16 pb-8 border-b-2">
+							<div class="title mb-16 pb-8 border-b-2 border-blue-500">
 
-								<h1 class="text-5xl mb-5">{title}</h1>
+								<h1 class="mb-5
+								text-5xl
+								font-bold from-blue-800 via-blue-600 to-red-800 
+								bg-gradient-to-r 
+								bg-clip-text text-transparent 
+								leading-snug">{title}</h1>
 
 								
 								<small class="date flex">

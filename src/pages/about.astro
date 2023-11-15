@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/AboutPost.astro';
 import myImage from "../assets/logo/VeryGoodDay5599.png";
+import { Icon } from 'astro-icon'
 
 ---
 
@@ -12,15 +13,24 @@ import myImage from "../assets/logo/VeryGoodDay5599.png";
 >
 	<p>
 		สำหรับ VeryGoodDay5599 เป็น Blog ที่ให้ความรู้ การแก้ปัญหาต่าง ๆ ไม่ว่าจะทางด้านไอที การใช้งาน หรือวิธีการต่าง ๆ 
-		เช่น วิธีการเดินทาง วิธีการชำระสินค้าบนแพลตฟอร์มต่าง ๆ และยังมีเรื่องอื่น ๆ อย่างการรีวิวผลิตภัณฑ์ 
+		เช่น วิธีการชำระสินค้าบนแพลตฟอร์มต่าง ๆ และยังมีเรื่องอื่น ๆ อย่างการรีวิวผลิตภัณฑ์ 
 		เพื่อเป็นไอเดียและช่วยเหลือใครหลายคนที่ประสบปัญหาในการค้นคว้าสิ่งต่าง ๆ ทางทีมงานหวังเป็นอย่างยิ่งว่า 
 		ข้อมูลบทความที่พวกเราได้เขียนขึ้นมานั้นจะเป็นประโยชน์ต่อท่าน 
 
 	</p>
 
-	<p>-- Have a very good day.</p>
 
-	<p>Contact us : verygoodday59@gmail.com</p>
+	<div class="flex ">
+		<p><Icon name="carbon:mostly-cloudy" 
+			class="h-7 w-7 flex-no-shrink fill-current pt-1 mr-2 text-blue-500" /></p>
+		<p>Have a very good day.</p>
+	</div>
+
+	<div class="flex">
+		<p><Icon name="carbon:mail-all" class="h-7 w-7 flex-no-shrink fill-current pt-1 mr-2 text-blue-500" /></p>
+		<p>Contact us : verygoodday59@gmail.com</p>
+	</div>
+	
 
 
 
