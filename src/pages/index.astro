@@ -17,7 +17,7 @@ const posts = (await getCollection('blog')).sort(
 
 const lastText = "ใหม่";
 const headLatest = "Lastest";
-const introText = "Blog ที่ให้ความรู้ การแก้ปัญหาต่าง ๆ ไม่ว่าจะทางด้านไอที การใช้งาน หรือวิธีการต่าง ๆ";
+const introText = "Blog ที่ให้ความรู้ การแก้ปัญหา ไม่ว่าจะทางด้านไอที การใช้งาน หรือวิธีการต่าง ๆ";
 
 ---
 
@@ -40,7 +40,9 @@ const introText = "Blog ที่ให้ความรู้ การแก�
 				bg-gradient-to-r 
 				bg-clip-text text-transparent">VeryGoodDay5599</h1>
 				
-					<p class="px-4 py-6">{introText}</p>
+					<p class="px-4 py-6">
+					{introText}
+					</p>
 				</div>
 				
 				<div class="bg-white">
@@ -57,13 +59,14 @@ const introText = "Blog ที่ให้ความรู้ การแก�
 
 										<a href={`/blog/${post.slug}/`}>
 											<div class="absolute bottom-0 left-0 py-4 px-4 w-full
-											backdrop-blur-xl bg-white/40">
+											bg-opacity-5 backdrop-blur-xl bg-white/30">
 											 <h2 class="font-bold text-xl">{post.data.title}</h2>
 											
 											</div>
 										</a>
 
-										<div class="text-sm absolute top-0 right-0 bg-red-500 px-2
+										<div class="text-sm absolute top-0 right-0 
+										bg-gradient-to-r from-red-600 via-red-500 to-red-500 first-letter:px-2
 										 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3">
 											<span class="font-bold">{lastText}</span>
 											
@@ -99,10 +102,10 @@ const introText = "Blog ที่ให้ความรู้ การแก�
 										absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
 
 										
-										<div class="absolute top-0 right-0 rounded-bl backdrop-blur-xl bg-white/60 
-										backdrop-opacity-5 px-2 py-1 text-sm">
+										<div class="absolute top-0 right-0 rounded-bl backdrop-blur-xl bg-white/40 
+										backdrop-opacity-5 px-2 py-1 text-s text-gray-800">
 											<div class="flex flex-row items-center">
-												<span  class="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
+												<span  class="py-1 text-sm font-regula mr-1 flex flex-row items-center">
 													<Icon name="ic:baseline-access-time" class="h-5 w-5 flex-no-shrink fill-current mr-1" />
 													<span class="ml-1"><FormattedDate date={post.data.pubDate} />
 														</span>

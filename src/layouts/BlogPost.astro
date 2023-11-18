@@ -17,12 +17,50 @@ const optimizedBackgroundImage = await getImage({ src: myImage })
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+const userWritter = 'Supaluck S.';
 ---
 
 <html lang="en" class="sm:scroll-smooth">
 	<head>
 		<BaseHead title={title} description={description} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: 0;
+			}
+			.hero-image {
+				width: 100%;
+			}
+			.hero-image img {
+				display: block;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.prose {
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 1em;
+				color: rgb(var(--gray-dark));
+			}
+			
+			.date {
+				margin-bottom: 0.5em;
+				/* color: rgb(var(--gray)); */
+			}
+			.last-updated-on {
+				font-style: italic;
+			}
+
+			h2,h3,h4 {
+				color: blue;
+			}
+		</style>
 	</head>
+
 
 	<body class="">
 		<Header />
@@ -51,15 +89,21 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 								
 								<small class="date flex">
-									<Icon name="jam:write" class="h-5 w-5 flex-no-shrink fill-current pt-1 mr-1" />
-									<FormattedDate date={pubDate} />
-									{
-										updatedDate && (
-											<span class="last-updated-on text-sm leading-3">
-												Last updated on <FormattedDate date={updatedDate} />
-											</span>
-										)
-									}
+									<span class="flex mr-4">
+										<Icon name="jam:write" class="h-5 w-5 flex-no-shrink fill-current pt-1 mr-1" />
+										<FormattedDate date={pubDate} />
+										{
+											updatedDate && (
+												<span class="last-updated-on text-sm leading-3">
+													Last updated on <FormattedDate date={updatedDate} />
+												</span>
+											)
+										}
+									</span>
+									<span class="flex">
+										<Icon name="carbon:user-admin" class="h-5 w-5 flex-no-shrink fill-current pt-1 mr-1" />
+										<span>{userWritter}</span>
+									</span>
 								</small>
 								
 							</div>
